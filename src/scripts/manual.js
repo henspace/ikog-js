@@ -342,7 +342,7 @@ function iKogHelp() {
 iKogHelp.prototype.render = function(data) {
     var html = "<div class='help'>";
     if (/^online$/i.test(data)) {
-        window.open("http://henspace.com/wiki/pmwiki.php?n=Ikog-js.Ikog-js", "_blank");
+        window.open("https://github.com/henspace/ikog-js/wiki", "_blank");
         html += "Online help opened in new window.";
     } else  if (data && data != "") {
         data = data.toLowerCase();

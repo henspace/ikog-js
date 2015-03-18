@@ -1,0 +1,140 @@
+/* Terminal setups */
+body, #console, #commandLine, #commandLineEntry, #console #mockScreen,
+    #pwEntry {
+    background-color: #242424;
+    color: #f6f3e8;
+    font-family: monospace;
+    font-size: 110%;
+}
+
+#nonConsoleHeader {
+    font-size:180%;
+    font-weight:bold;
+}
+#nonConsoleFooter {
+    font-size:80%;
+    font-style: italic;
+}
+.document h1 {
+    font-size:140%;
+    font-weight: bold;
+    color: #f6f3e8;
+}
+
+.document h2 {
+    border-top: thin solid #888888;
+    padding-top: 10px;
+    font-size:120%;
+    font-weight:bold;
+    color: #8ac6f2;
+}
+.document h3 {
+    font-size:100%;
+    font-weight: bold;
+    color: #8ac6f2;
+}
+
+.document a {
+    color: #95e454;
+}
+
+.timeout {
+    text-decoration: blink;
+    font-size: 200%;
+    font-weight: bold;
+    color: #e5786d;
+    border: thin solid #e5786d;
+    padding: 5px;
+}
+
+ul.task-list li:nth-child(odd) {
+    background-color: #242424;
+}
+ul.task-list li:nth-child(even) {
+    background-color: #242424;
+}
+
+
+/* Task styles */
+div.verbose-task {
+    border-top: thin solid #888888;
+    border-bottom: thin solid #888888;
+}
+
+a, a:visited {
+    color: #cae682;
+}
+
+a:hover {
+    color: #e5786d;
+}
+
+
+.prompt {
+    color: #e5786d;
+    padding-right: 5px;
+}
+.task-id {
+    color: #cae682;
+}
+
+.description, .secret {
+    color: #cae682;
+}
+
+.contexts {
+    color: #8ac6f2;
+}
+
+.projects, .priority {
+    color: #e5786d;
+}
+
+.due-date {
+    color: #95e454;
+}
+
+.created-date {
+    color: #99968b;
+}
+
+.error {
+    color: #e5786d;
+    font-weight: bold;
+}
+
+.filter, .terse-filter {
+    color: #f6f3e8;
+}
+
+.storage-list-title {
+    color: #cae682;
+}
+.storage-list span.store-name {
+    display:inline-block;
+    width: 10em;
+    color: #cae682;
+}
+
+.storage-list span.store-path {
+    display:inline-block;
+    width: 15em;
+    color: #8ac6f2;
+}
+
+.storage-list span.store-size {
+    display:inline-block;
+    width: 5em;
+    color: #e5786d;
+}
+
+.help {
+    color: #8ac6f2;
+}
+.help li {
+    color: #cae682;
+}
+.help li em {
+    color: #99968b;
+}
+

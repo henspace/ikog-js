@@ -27,9 +27,16 @@ DropboxStore.prototype.init = function() {
             key: "!!!DROPBOX_CLIENT_KEY!!!",
             sandbox: true
         });
-        this.client.authDriver(new Dropbox.Drivers.Redirect({
-            rememberUser: true
-        }));
+        var receiver = location.href.replace('ikog-js.html','oauth_receiver.html');
+        this.client.authDriver(new Dropbox.AuthDriver.Popup({ receiverUrl: receiver}));
+
+        // check if already logged in
+        this.client.authenticate({interactive:false});
+        if (!this.client.isAuthenticated()) {
+            this.auth(function(ok) {
+                return ok;
+            });
+        }
     } catch (err) {
         terminal.error("Unable to initialise Dropbox. On IE you need to use https.");
         return false;
@@ -41,7 +48,7 @@ DropboxStore.prototype.auth= function(callback) {
     console.log("DropboxStore auth");
     var dbs = this;
     try {
-        this.client.authenticate(function(error, thisclient) {
+        this.client.authenticate(function(error) {
             if (error) {
                 dbs.showError("Authentication error.", error);    
             } 
