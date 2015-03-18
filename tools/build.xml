@@ -1,0 +1,69 @@
+<project name="ikog-js" default="deploy" basedir=".">
+    <description>
+        Build file for ant.
+    </description>
+    <!-- set global properties for this build -->
+    <property file="_local_configuration.properties" prefix="local" />
+    <property name="deploy-path" location="../_local_deploy" />
+    <property name="temp-path" location="../_local_temp" />
+    <property name="temp-scripts-path" location="${temp-path}/scripts" />
+    <property name="src" location="../src" />
+    <property name="scripts" location="${src}/scripts" />
+    <property name="first-script" value = "unused.js" />
+    <property name="last-script" value = "ikog.js" />
+    <property name="merged-script" value = "ikog-merged.js" />
+    <property name="minified-script" value = "ikog-min.js" />
+        
+    <target name="init">
+        <mkdir dir="${deploy-path}" />
+        <mkdir dir="${temp-scripts-path}" />
+        <delete>
+            <fileset dir="${temp-scripts-path}" includes="**/*"/>
+        </delete>
+    </target>
+
+    <target name="concatmin" depends = "init">
+        <concat fixlastline="Yes" dest="${temp-scripts-path}/${merged-script}">
+            <fileset dir = "${scripts}">
+                <include name = "${first-script}" />
+            </fileset>
+            <fileset dir = "${scripts}">
+                <include name = "*.js" />
+                <exclude name = "${merged-script}" />
+                <exclude name = "${minified-script}" />
+                <exclude name = "${first-script}" />
+                <exclude name = "${last-script}" />
+            </fileset>
+            <fileset dir = "${scripts}">
+                <include name = "${last-script}" />
+            </fileset>
+        </concat>
+        <replaceregexp file = "${temp-scripts-path}/${merged-script}" match = "!!!DROPBOX_CLIENT_KEY!!!" replace="${local.dropbox-client-key}" flags="gm" />
+    </target> 
+    
+    <target name="min" depends="concatmin">
+        <java jar="${local.yui-compressor}" fork="true">
+            <arg value="--disable-optimizations" />
+            <arg value="--preserve-semi" />
+            <arg value="-o" />
+            <arg value="${temp-scripts-path}/${minified-script}" />
+            <arg value="${temp-scripts-path}/${merged-script}" />
+        </java>
+    </target>
+
+  <target name="deploy" depends="min"
+        description="deploy the application" >
+        <copy todir = "${deploy-path}">
+            <fileset dir="${src}">
+                <include name="**/lib/*.js" />
+                <include name="**/*.html" />
+                <exclude name="**/ikog2.html" />
+                <include name="**/styles/*.css" />
+            </fileset>
+            <fileset dir="${temp-path}">
+                <include name="**/scripts/*min.js" />
+            </fileset>
+        </copy>
+    </target>
+</project>
+

@@ -1,0 +1,57 @@
+<!DOCTYPE  html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>iKog-js todo list</title>
+	<script src = "lib/jquery-1.8.2.min.js"></script>
+	<script src = "lib/json2-min.js"></script>
+	<script src = "lib/aes.js"></script>
+	<script src="lib/dropbox-0-7-0.min.js"> </script>
+        <script src = "scripts/ikog-min.js"></script>
+        <link rel="icon" type="image/ico" href="favicon.ico">
+        
+	
+	<link rel="stylesheet" type="text/css" href="styles/theme.css">
+	<meta name="keywords" content="tasks todo gtd management time list" />
+	<meta name="description" content="iKog-js todo list" />
+	<meta name="author" content="Steve Butler" />
+	<meta name="copyright" content="(c)2012 Steve Butler" />
+<style id="styleOverride">
+</style>
+</head>
+
+<body>
+    <form action= "#">
+<h1 style="color: #ff0000";>IMPORTANT! Support for Dropbox will finish at the end of October. This is because of changes to Oauth 2. Before that date, make sure you switch over to using localstorage.</h1>
+
+    <div id="console">
+        <div id = "nonConsoleHeader"></div>
+        <div id ="mockScreenContainer">
+            <div id = "mockScreen">
+            </div>
+            <div id ="mockScreenContainerEnd"></div>
+        </div>
+        <div id="commandLine">
+			<span id="prompt" class="prompt">
+				<span id="dirty"></span>
+				<span id="prompt-text">root:</span>
+			</span>
+            
+           <span id = "fileImportContainer">
+           	   <input type="file" id="importFile" name="importFile" />
+           	   <input type="button" id="importFileCancel" value="Cancel" />
+           </span>
+           <span id = "commandEntryContainer">
+               <input type="password" id ="pwEntry" />
+               <textarea type="text" id="commandLineEntry"></textarea>
+           </span>
+        </div>
+                <div id = "nonConsoleFooter"></div>
+		<div id="bottom"></div>
+    </div>
+    </form>
+</body>
+</html>
+
+
+

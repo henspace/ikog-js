@@ -1,0 +1,135 @@
+/* Terminal setups */
+#nonConsoleHeader {
+    display: none;
+}
+#nonConsoleFooter {
+    display: none;
+}
+body, #console, #commandLine, #commandLineEntry, #console #mockScreen,
+    #pwEntry {
+    border: none;
+}
+
+#console, #commandLine, #console #mockScreen {
+    width: 100%;
+}
+#console {
+    height: 100%;
+    overflow: auto;
+    margin: 5px;
+}
+
+#prompt {
+    padding-top: 1px;
+    float: left;
+}
+
+#commandEntryContainer {
+    display:block;
+    overflow:hidden;
+    padding-left:10px;
+    padding-right:5px;
+}
+
+#commandLineEntry {
+    display:inline;
+    width: 100%;
+    outline: none;
+    padding-top: 0px;
+}
+
+#pwEntry {
+    display:none;
+    width:100%;
+    outline: none;
+}
+
+#fileImportContainer {
+    display: none;
+}
+#importFile {
+    outline: none;
+}
+
+@media only screen and (max-width: 960px) {
+#prompt {
+    float:none;
+    display:block;
+}
+}
+
+
+/* General list style */
+ul.bullet-free {
+    list-style: none;
+    margin: auto 0 0;
+    padding: 0;
+}
+
+ul.alias-list li span:first-child {
+    display:inline-block;
+    width:15em;
+}
+
+
+ul.command-list li {
+    display:inline-block;
+    width:15em;
+}
+
+
+/* Task styles */
+
+.verbose-task .description, .verbose-task .secret {
+    display: inline-block;
+}
+
+.verbose-task .priority span:first-child {
+    display: inline-block;
+    width:12em;
+}
+
+
+.verbose-task .task-id:before, .terse-task .task-id:before {
+    content: "[";
+}
+.verbose-task .task-id:after, .terse-task .task-id:after {
+    content: "]";
+}
+.terse-task .priority:before {
+    content: "#";
+}
+.verbose-task .priority:before {
+    content:"Priority:";
+}
+
+.verbose-task ul.contexts:before {
+    content: "Contexts:";
+}
+
+.verbose-task ul.projects:before {
+    content: "Projects:";
+}
+
+.verbose-task .due-date:before, .terse-task .due-date:before {
+    content: "Due: ";
+}
+.verbose-task .created-date:before {
+    content: "Created: ";
+}
+
+.terse-task .created-date {
+    display: none;
+}
+.verbose-task .projects li, .verbose-task .contexts li, .verbose-task .task-id,
+.verbose-task .description, .terse-task .task-id,
+.terse-task .description, .terse-task .priority, .terse-task ul,
+.terse-task li, .terse-task .due-date, .terse-task .secret {
+    display:inline;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.filter:before {
+    content: "Filter = ";
+}

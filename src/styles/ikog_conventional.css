@@ -1,0 +1,201 @@
+/* Terminal setups */
+#nonConsoleHeader {
+    margin-bottom:5px;
+    
+}
+body, #console, #commandLine {
+    border: none;
+}
+
+#console {
+    border: thin solid #888888;
+    border-radius: 10px;
+}
+
+
+#commandLineEntry, #pwEntry {
+    border: thin solid #888888;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 5px;
+}
+
+#commandLine {
+    margin-left:auto;
+    margin-right: auto;
+}
+#console #mockScreenContainer {    
+    border: thin solid #888888;
+    overflow-y: scroll;
+    height: 310px;
+    margin-left:auto;
+    margin-right: auto;
+    padding-left:10px;
+    padding-right:5px;
+}
+
+
+#console {
+    height: 100%;
+    overflow: auto;
+    margin-left:auto;
+    margin-right:auto;
+    padding:5px;
+}
+
+#prompt {
+    padding-top: 1px;
+    display: block;
+}
+
+#commandEntryContainer {
+    display:block;
+    overflow:hidden;
+    
+}
+
+#commandLineEntry {
+    display:inline;
+    outline: none;
+    padding-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#pwEntry {
+    display:none;
+    outline: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#fileImportContainer {
+    display: none;
+}
+#importFile {
+    outline: none;
+}
+
+@media only screen and (max-width: 960px) {
+#prompt {
+    float:none;
+    display:block;
+}
+}
+
+@media only screen  {
+    #console { width: 240px; }
+    #console #mockScreenContainer { width: 180px; }
+    #commandLine { width: 195px; }
+    #commandLineEntry, #pwEntry { width: 178px; }
+}
+
+@media only screen and (min-width: 610px) {
+    #console { width: 400px; }
+    #console #mockScreenContainer { width: 340px; }
+    #commandLine { width: 355px; }
+    #commandLineEntry, #pwEntry { width: 338px; }
+}
+
+@media only screen and (min-width: 610px) {
+    #console { width: 600px; }
+    #console #mockScreenContainer { width: 540px; }
+    #commandLine { width: 555px; }
+    #commandLineEntry, #pwEntry { width: 538px; }
+}
+
+@media only screen and (min-width: 810px) {
+    #console { width: 800px; }
+    #console #mockScreenContainer { width: 740px; }
+    #commandLine { width: 755px; }
+    #commandLineEntry, #pwEntry { width: 738px; }
+}
+
+@media only screen and (min-width: 970px) {
+    #console { width: 960px; }
+    #console #mockScreenContainer { width: 900px; }
+    #commandLine { width: 915px; }
+    #commandLineEntry, #pwEntry { width: 898px; }
+}
+
+@media only screen and (min-width: 1210px) {
+    #console { width: 1200px; }
+    #console #mockScreenContainer { width: 1140px; }
+    #commandLine { width: 1155px; }
+    #commandLineEntry, #pwEntry { width: 1138px; }
+}
+
+/* General list style */
+ul.bullet-free {
+    list-style: none;
+    margin: auto 0 0;
+    padding: 0;
+}
+
+ul.alias-list li span:first-child {
+    display:inline-block;
+    width:15em;
+}
+
+
+ul.command-list li {
+    display:inline-block;
+    width:15em;
+}
+
+
+/* Task styles */
+
+.verbose-task .description, .verbose-task .secret {
+    display: inline-block;
+}
+
+.verbose-task .priority span:first-child {
+    display: inline-block;
+    width:12em;
+}
+
+
+.verbose-task .task-id:before, .terse-task .task-id:before {
+    content: "[";
+}
+.verbose-task .task-id:after, .terse-task .task-id:after {
+    content: "]";
+}
+.terse-task .priority:before {
+    content: "#";
+}
+.verbose-task .priority:before {
+    content:"Priority:";
+}
+
+.verbose-task ul.contexts:before {
+    content: "Contexts:";
+}
+
+.verbose-task ul.projects:before {
+    content: "Projects:";
+}
+
+.verbose-task .due-date:before, .terse-task .due-date:before {
+    content: "Due: ";
+}
+.verbose-task .created-date:before {
+    content: "Created: ";
+}
+
+.terse-task .created-date {
+    display: none;
+}
+.verbose-task .projects li, .verbose-task .contexts li, .verbose-task .task-id,
+.verbose-task .description, .terse-task .task-id,
+.terse-task .description, .terse-task .priority, .terse-task ul,
+.terse-task li, .terse-task .due-date, .terse-task .secret {
+    display:inline;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.filter:before {
+    content: "Filter = ";
+}
